@@ -153,3 +153,4 @@ The most important thing to keep in mind is to keep modules/pages separated and 
 ## Starter Guide
 
 You can read more about in our guideline https://www.notion.so/lucydmedia/Streamlining-Shopify-Theme-Development-Using-GitHub-1463cb84c38b800ba072dd108d561f3f?showMoveTo=true&saveParent=true"# refres-mix" 
+"# refress-mix" 
