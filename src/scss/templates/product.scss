@@ -1,0 +1,1521 @@
+body {
+  &:has(.xite-product-container) {
+    .breadcrumb {
+      display: none;
+    }
+  }
+}
+
+
+
+
+.template-product {
+
+  .xite-breadcrumbs {
+    background: var(--Contrast-2, #BBD8E9);
+    padding: 16px;
+  }
+
+  .xite-header:not(.sticky) {
+    border-radius: 0;
+  }
+
+  // Product Section Base Structure
+  .xite-product-container {
+    background: var(--Contrast-2, #BBD8E9);
+    padding-bottom: 26px;
+    border-radius: 0 0 40px 40px;
+    min-height: 680px;
+
+    @include respond-below(md) {
+      min-height: unset;
+      background-color: white;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1348px;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      overflow: visible; // Ensure container allows sticky behavior
+
+      @include respond-below(md) {
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    .product-title-mobile {
+      display: none;
+
+      @include respond-below(md) {
+        padding: 0 16px;
+        display: block;
+      }
+
+      .product-title {
+        // Typography and spacing
+        color: var(--Contrast-1, #193547);
+        leading-trim: both;
+        text-edge: cap;
+        font-family: "Apotek ExtraCond";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 716;
+        line-height: 52px;
+        /* 130% */
+        text-transform: uppercase;
+      }
+
+      .jdgm-widget.jdgm-widget {
+        display: flex;
+        justify-content: start;
+
+        .jdgm-star {
+          color: var(--Contrast-1, #193547);
+        }
+
+        span.jdgm-prev-badge__text {
+          color: var(--Contrast-1, #193547);
+          font-family: "Apotek ExtraCond";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 466;
+          line-height: 22.109px;
+          letter-spacing: 0.64px;
+          text-transform: uppercase;
+        }
+      }
+
+    }
+
+    // Product Gallery
+    .product-gallery-wrapper {
+      position: relative;
+      width: 664px;
+
+      @include respond-below(md) {
+        width: 100%;
+        background: #bbd8e9;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .product-gallery {
+        border-radius: 19.585px;
+        // background: var(--Contrast-1, #193547);
+        display: flex;
+        padding: 16px 26.114px;
+        padding-top: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 19.585px;
+        flex-shrink: 0;
+        overflow: hidden;
+        width: 100%;
+        position: absolute; // Fallback
+        top: 0; // For sticky position 
+        transition: ease .2s;
+
+        @include respond-below(md) {
+          padding: 32px 16px 12px 16px;
+          position: relative;
+        }
+
+        .product-callout {
+          display: flex;
+          padding: 4px 11.463px;
+          justify-content: center;
+          align-items: center;
+          gap: 11.463px;
+          border-radius: 20px;
+          background: #FF3961;
+          margin-top: 16px;
+          padding-bottom: 0;
+
+          p {
+            margin: 0;
+            color: var(--Background, #FFF);
+            text-align: center;
+            leading-trim: both;
+            text-edge: cap;
+            font-family: Teko;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 27.51px;
+            /* 137.552% */
+            text-transform: uppercase;
+          }
+
+        }
+
+        // Main Product Image Swiper
+        .product-gallery-main {
+          width: 100%;
+
+          @include respond-below(md) {
+            width: 100%;
+          }
+
+          .swiper-slide {
+            // Image container styles
+            // width: fit-content !important;
+            width: 100%;
+            text-align: center;
+
+            a.zoom {
+              position: absolute;
+              top: 20px;
+              right: 60px;
+              color: #193547;
+
+              @include respond-below(md) {
+                right: 20px;
+              }
+
+              svg {
+                width: 20px;
+                height: auto;
+                color: #193547;
+
+                * {
+                  color: #193547;
+                }
+              }
+            }
+
+            img {
+              width: 529.419px;
+              height: 524.621px;
+              flex-shrink: 0;
+              border-radius: 25.591px;
+              object-fit: cover;
+                  background: #fff;
+
+              @include respond-below(md) {
+                width: 100%;
+                height: 321.439px;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+
+        // Thumbnail Swiper
+        .product-gallery-thumbs-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          width: 100%;
+          position: relative;
+
+          .swiper {
+            width: 436px;
+
+            .swiper-slide {
+              opacity: 0.4;
+              transition: ease .2s;
+
+              &.swiper-slide-active {
+                opacity: 1;
+              }
+
+              // Thumbnail slide styles
+              img {
+                width: 85.145px;
+                height: 80.209px;
+                border-radius: 16px;
+                object-fit: cover;
+                background: #fff;
+
+                @include respond-below(md) {
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 2.743px;
+                }
+              }
+            }
+          }
+
+          .swiper-button-next,
+          .swiper-button-prev {
+            // Navigation button positioning
+            display: flex;
+            width: 56px;
+            height: 56px;
+            padding: 16px 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 11.924px;
+            border-radius: 40px;
+            border: 1.192px solid #193547;
+            transition: ease .2s;
+
+            &:hover {
+              background-color: #193547;
+            }
+
+            @include respond-below(md) {
+              display: none;
+            }
+          }
+
+          .swiper-button-prev {
+            &:hover {
+              &:after {
+                content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEwIDE4IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNOC44ODQ3NyAwLjg5NTUwOEwwLjg4NDc2NiA4Ljg5NTUxTDguODg0NzcgMTYuODk1NSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPg==");
+              }
+            }
+
+            &:after {
+              content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEwIDE4IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNOSAxTDEgOUw5IDE3IiBzdHJva2U9IiMxOTM1NDciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=");
+              line-height: 0;
+            }
+          }
+
+          .swiper-button-next {
+            &:hover {
+              &:after {
+                content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEwIDE4IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMS4xMTUyMyAwLjg5NTUwOEw5LjExNTIzIDguODk1NTFMMS4xMTUyMyAxNi44OTU1IiBzdHJva2U9IndoaXRlIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+");
+              }
+            }
+
+            &:after {
+              content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEwIDE4IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMSAxTDkgOUwxIDE3IiBzdHJva2U9IiMxOTM1NDciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=");
+              line-height: 0;
+            }
+          }
+
+        }
+      }
+
+    }
+
+    // Product Details Section
+    .product-details {
+      border-radius: 20px;
+      background: #FFF;
+      display: flex;
+      padding: 20px 36px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      flex: 1 0 0;
+      align-self: stretch;
+
+      @include respond-below(md) {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      // Product Title
+      .product-title {
+        // Typography and spacing
+        color: var(--Contrast-1, #193547);
+        leading-trim: both;
+        text-edge: cap;
+        font-family: "Apotek ExtraCond";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 716;
+        line-height: 52px;
+        /* 130% */
+        text-transform: uppercase;
+
+        @include respond-below(md) {
+          display: none;
+        }
+      }
+
+      .jdgm-widget.jdgm-widget {
+        display: flex;
+        justify-content: start;
+
+        @include respond-below(md) {
+          display: none !important;
+        }
+
+        .jdgm-star {
+          color: var(--Contrast-1, #193547);
+        }
+
+        span.jdgm-prev-badge__text {
+          color: var(--Contrast-1, #193547);
+          font-family: "Apotek ExtraCond";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 466;
+          line-height: 22.109px;
+          letter-spacing: 0.64px;
+          text-transform: uppercase;
+        }
+      }
+
+      .product-description {
+        color: var(--Contrast-1, #193547);
+        leading-trim: both;
+        text-edge: cap;
+
+        /* BODY */
+        font-family: "Roboto Condensed";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        /* 125% */
+        margin: 0;
+
+        ul {
+          padding-left: 20px;
+          margin-bottom: 15px;
+        }
+        p:last-child{
+          margin: 0;
+        }
+      }
+
+      .product-benefits-wrapper {
+        @include respond-below(md) {
+          overflow: auto;
+          width: calc(100% + 36px);
+        }
+        .product-benefits{
+          display: flex;
+          align-items: center;
+          align-self: stretch;
+          .benefit-item{
+            display: flex;
+            width: 80px;
+            height: 87.826px;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            gap: 8px;
+            aspect-ratio: 80 / 87.83;
+            .benefit-item-icon{
+              width: 45px;
+              height: 45px;
+              flex-shrink: 0;
+            }
+            .benefit-item-text{
+              color: var(--Contrast-1, #193547);
+              text-align: center;
+              leading-trim: both;
+              text-edge: cap;
+              font-family: "Apotek ExtraCond";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 550;
+              line-height: 16px; /* 114.286% */
+              letter-spacing: 0.28px;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+      // Product Pricing
+      .product-price {
+        .price-compare {
+          // Comparison price styling
+        }
+
+        .price {
+          // Regular price styling
+        }
+      }
+
+      // Product Form Component
+      .product-form {
+        width: 100%;
+
+        .product-variants {
+          border: none;
+
+          legend {
+            display: none;
+          }
+
+          .variant-option {
+            display: inline-flex;
+            gap: 12px;
+            margin-bottom: 16px;
+          }
+
+          label.variant-button {
+            display: flex;
+            padding: 10px 12px;
+            align-items: center;
+            gap: 16px;
+            border-radius: 24px;
+            border: 1px solid var(--Complementary, #999);
+            color: #090909;
+            text-align: center;
+            leading-trim: both;
+            text-edge: cap;
+            font-family: "Roboto Condensed";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            cursor: pointer;
+            transition: ease .2s;
+            ;
+
+            &:has(input:checked) {
+              border-radius: 24px;
+              border: 1px solid var(--Contrast-1, #193547);
+              background: var(--Contrast-2, #BBD8E9);
+              font-weight: bold;
+            }
+
+            input {
+              display: none;
+            }
+
+            span {
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .product-variants-select {
+          display: none;
+        }
+
+        // Submit Button
+        &__submit {
+          width: 100%;
+          border-radius: 40px;
+          background: var(--Contrast-1, #193547);
+          display: flex;
+          padding: 12px 16px 12px 24px;
+          align-items: center;
+          gap: 11.924px;
+          align-self: stretch;
+          text-align: center;
+          color: var(--Background, #FFF);
+          font-family: "Apotek ExtraCond";
+          font-size: 33.388px;
+          font-style: normal;
+          font-weight: 716;
+          line-height: 28.619px;
+          /* 85.714% */
+          text-transform: uppercase;
+          justify-content: space-between;
+          border: none;
+
+          span.plus {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            padding: 7.515px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 40px;
+            background: #FFF;
+            transition: ease .2s;
+          }
+
+          &:hover {
+            background: #193547f2;
+
+            .plus {
+              transform: rotate(90deg);
+            }
+          }
+
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      // Product Description
+      .details-accordion {
+        .ac {
+          .ac-header {
+            button {
+              color: var(--Contrast-1, #193547);
+              leading-trim: both;
+              text-edge: cap;
+              font-family: "Roboto Condensed";
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px;
+
+              /* 150% */
+              &:after {
+                content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4KICA8cmVjdCB5PSIwLjAwMDczMjQyMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9IiNGNUY1RjUiLz4KICA8cGF0aCBkPSJNOSAxMy4wMDA3TDE2LjUgMjAuMDAwN0wyNCAxMy4wMDA3IiBzdHJva2U9IiMxOTM1NDciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==");
+              }
+            }
+          }
+
+          .ac-panel {}
+        }
+
+        .product-description {
+          // Typography and spacing
+        }
+      }
+
+      .product-delivery {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+
+        svg {
+          width: 24px;
+          height: 15px;
+        }
+
+        p {
+          margin: 0;
+          color: var(--Contrast-1, #193547);
+          font-family: "Roboto Condensed";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px;
+          /* 150% */
+        }
+      }
+
+      .product-meta-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+
+        .full-ingredients-accordion {
+          border-top: 1px solid var(--Gray-lines, #F0F0F0);
+          width: 100%;
+
+          .ac {
+            width: 100%;
+            border: none;
+            margin: 0;
+            padding: 12px 0px;
+            align-items: center;
+            align-self: stretch;
+            width: 100%;
+
+            &.is-active {
+
+              .ac-header {
+                .ac-trigger {
+                  &:after {
+                    transform: rotate(180deg) translateY(15px) !important;
+                  }
+                }
+              }
+
+              .ac-panel {}
+            }
+
+            .ac-header {
+              width: 100%;
+
+              .ac-trigger {
+                color: var(--Contrast-1, #193547);
+                leading-trim: both;
+                text-edge: cap;
+                font-family: "Roboto Condensed";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 24px;
+                /* 150% */
+                padding: 0;
+                text-transform: capitalize;
+                letter-spacing: normal;
+
+                &:after {
+                  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4KICA8cmVjdCB5PSIwLjAwMDczMjQyMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9IiNGNUY1RjUiLz4KICA8cGF0aCBkPSJNOSAxMy4wMDA3TDE2LjUgMjAuMDAwN0wyNCAxMy4wMDA3IiBzdHJva2U9IiMxOTM1NDciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==");
+                  width: 32px;
+                  height: 32px;
+                  right: 0;
+                  transition: ease .5s;
+                }
+              }
+            }
+
+            .ac-panel {
+              margin: 0;
+            }
+          }
+        }
+
+        .certificate-wrapper {
+          width: 100%;
+          border-top: 1px solid var(--Gray-lines, #F0F0F0);
+
+          a {
+            display: flex;
+            padding: 12px 0px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            width: 100%;
+
+            span {
+              color: var(--Contrast-1, #193547);
+              leading-trim: both;
+              text-edge: cap;
+              font-family: "Roboto Condensed";
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px;
+              /* 150% */
+            }
+
+            svg {
+              width: 32px;
+              height: 32px;
+            }
+          }
+
+        }
+      }
+
+      // Product Tags
+      .product-tags {
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            // Tag item styling
+          }
+        }
+      }
+
+      // Product Unavailability Message
+      .product-unavailable {
+        // Styling for out-of-stock message
+      }
+    }
+
+    // Variant Button Styles
+    .variant-button {
+      &__input {
+        display: none;
+
+        &:checked+span {
+          // Selected state placeholder
+        }
+      }
+
+      &__label {
+        cursor: pointer;
+        // Base unselected state placeholder
+      }
+    }
+
+    // Utility Classes
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+  }
+
+  .xite-global-reviews {
+    padding: 70px 0;
+
+    @include respond-below(md) {
+      padding: 36px 16px 0;
+    }
+
+    .container {
+      width: 1121px !important;
+
+      @include respond-below(md) {
+        width: 100% !important;
+      }
+    }
+
+    h4 {
+      color: var(--Contrast-1, #193547);
+      text-align: center;
+      leading-trim: both;
+      text-edge: cap;
+
+      /* DSK/H1 */
+      font-family: "Apotek ExtraCond";
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 716;
+      line-height: 52px;
+      /* 86.667% */
+      text-transform: uppercase;
+
+      @include respond-below(md) {
+        font-size: 32px;
+        line-height: 24px;
+        /* 150% */
+      }
+    }
+
+    .jdgm-carousel-wrapper[data-from-snippet="true"] {
+      display: block !important;
+
+      .jdgm-carousel--compact-theme.jdgm-carousel {
+        width: 100%;
+        float: none;
+      }
+    }
+
+    .jdgm-carousel-wrapper {
+      width: 100%;
+      padding: 0;
+
+      .jdgm-carousel-title-and-link {
+        display: none;
+      }
+
+      .jdgm-carousel-item {
+        border-radius: 12px;
+        background: #FFF;
+        padding: 12px 8px !important;
+        margin-right: 10px;
+
+        .jdgm-carousel-item__review-title {
+          color: var(--Contrast-1, #193547);
+          font-family: "Roboto Condensed";
+          font-size: 14px;
+          font-style: italic;
+          font-weight: 700;
+          line-height: 24px;
+        }
+
+        .jdgm-carousel-item__review-body>p {
+          margin: 0;
+          overflow: hidden;
+          color: var(--Contrast-1, #193547);
+          text-overflow: ellipsis;
+          font-family: "Roboto Condensed";
+          font-size: 14px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: 20px;
+        }
+
+        .jdgm-carousel-item__reviewer-name {
+          color: var(--Contrast-1, #193547);
+          font-family: "Roboto Condensed";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          text-transform: capitalize;
+        }
+
+        .jdgm-star {
+          color: #193547;
+        }
+      }
+
+      .jdgm-carousel__arrows {
+        display: none;
+      }
+    }
+
+
+    .navigation-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      width: 100%;
+
+      @include respond-below(md) {
+        display: none;
+      }
+
+      .global-reviews-button-prev {
+        display: flex;
+        width: 56px;
+        height: 56px;
+        padding: 16px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 11.924px;
+        flex-shrink: 0;
+        border-radius: 40px;
+        border: 1.192px solid var(--Contrast-1, #193547);
+        transition: ease .2s;
+        content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDEwIDE3IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNOSAwLjVMMSA4LjVMOSAxNi41IiBzdHJva2U9IiMxOTM1NDciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=");
+
+        &:hover {
+          background-color: #193547;
+          content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEwIDE4IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNOSAxTDEgOUw5IDE3IiBzdHJva2U9IndoaXRlIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+");
+        }
+
+        @include respond-below(md) {
+          display: none;
+        }
+      }
+
+      .global-reviews-button-next {
+        display: flex;
+        width: 56px;
+        height: 56px;
+        padding: 16px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 11.924px;
+        flex-shrink: 0;
+        border-radius: 40px;
+        border: 1.192px solid var(--Contrast-1, #193547);
+        transition: ease .2s;
+        content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDEwIDE3IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMSAwLjVMOSA4LjVMMSAxNi41IiBzdHJva2U9IiMxOTM1NDciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=);
+
+        &:hover {
+          background-color: #193547;
+          content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEwIDE4IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMSAxTDkgOUwxIDE3IiBzdHJva2U9IndoaXRlIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+");
+        }
+
+        @include respond-below(md) {
+          display: none;
+        }
+      }
+    }
+
+  }
+
+  // Base container styling
+  .xite-product-cannabinoids {
+    padding: 90px 0;
+
+    @include respond-below(md) {
+      padding: 28px 16px;
+    }
+
+    .container {
+      // max-width: 698px !important;
+
+      @include respond-below(md) {
+        max-width: 100%;
+      }
+
+      .cannabinoids-wrapper {
+        display: flex;
+        width: 898px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        margin: auto;
+
+        @include respond-below(md) {
+          max-width: 100%;
+          padding: 28px 16px;
+        }
+
+        .cannabinoids-heading {
+          display: flex;
+          min-height: 349px;
+          align-items: flex-start;
+          gap: 28px;
+          align-self: stretch;
+
+          @include respond-below(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .description {
+            display: flex;
+            width: 546.5px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 36px;
+            align-self: stretch;
+
+            @include respond-below(md) {
+              width: 100%;
+            }
+
+            h2 {
+              color: var(--Contrast-1, #193547);
+              leading-trim: both;
+              text-edge: cap;
+
+              /* DSK/H1 */
+              font-family: "Apotek ExtraCond";
+              font-size: 60px;
+              font-style: normal;
+              font-weight: 716;
+              line-height: 52px;
+              /* 86.667% */
+              text-transform: uppercase;
+              margin: 0;
+
+              @include respond-below(md) {
+                font-size: 32px;
+                line-height: 32px;
+                /* 100% */
+                text-align: center;
+              }
+            }
+
+            img.illustration-mobile {
+              display: none;
+
+              @include respond-below(md) {
+                display: block;
+              }
+            }
+
+            p {
+              color: var(--Contrast-1, #193547);
+              leading-trim: both;
+              text-edge: cap;
+
+              /* BODY */
+              font-family: "Roboto Condensed";
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 20px;
+              /* 125% */
+            }
+          }
+
+          img {
+            border-radius: 11.024px;
+            flex: 1 0 0;
+            align-self: stretch;
+            object-fit: cover;
+            width: 456px;
+            height: 456px;
+
+            @include respond-below(md) {
+              height: 317px;
+              align-self: stretch;
+              display: none;
+            }
+          }
+        }
+
+        .cannabinoids {
+          display: grid;
+          align-items: center;
+          gap: 15.902px;
+          align-self: stretch;
+          grid-template-columns: 220px 220px;
+          align-items: stretch;
+
+          @include respond-below(md) {
+            display: flex;
+            gap: 15.902px;
+            overflow: auto;
+          }
+
+          .cannabinoid-card {
+            display: flex;
+            width: 220px;
+            padding: 19.878px 16px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16.697px;
+            border-radius: 16px;
+            background: #FFF;
+
+            h4 {
+              color: var(--Contrast-1, #193547);
+              leading-trim: both;
+              text-edge: cap;
+              font-family: "Apotek ExtraCond";
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 633;
+              line-height: 21.627px;
+              /* 108.136% */
+              text-transform: uppercase;
+              margin: 0;
+            }
+
+            .description {
+              ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16.697px;
+
+                li {
+                  color: var(--Contrast-1, #193547);
+                  leading-trim: both;
+                  text-edge: cap;
+
+                  /* BODY */
+                  font-family: "Roboto Condensed";
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 20px;
+                  /* 125% */
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  // Xite Product Information Section
+  .xite-product-tabs {
+    padding: 45px 0;
+
+    // Container styles
+    .container {
+      // Add container-specific styling if needed
+    }
+
+    // Product Information Wrapper
+    .product-information-wrapper {
+      // Global wrapper styles
+      border-radius: 20px;
+      background: var(--Contrast-2, #BBD8E9);
+      display: flex;
+      width: 897px;
+      padding: 38px 28px;
+      align-items: center;
+      gap: 20px;
+      margin: auto;
+
+      @include respond-below(md) {
+        width: 100%;
+      }
+
+      // Tabs Wrapper
+      .tabs-wrapper {
+        // Wrapper for entire tabs section
+        display: flex;
+        width: 389px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-shrink: 0;
+        align-self: stretch;
+        gap: 40px;
+
+        @include respond-below(md) {
+          width: 100%;
+          gap: 36px;
+        }
+
+        // Heading styles
+        .heading {
+          // Styles for the "What to Expect" heading
+          color: var(--Contrast-1, #193547);
+          /* DSK/H1 */
+          font-family: "Apotek ExtraCond";
+          font-size: 60px;
+          font-style: normal;
+          font-weight: 716;
+          line-height: 52px;
+          /* 86.667% */
+          text-transform: uppercase;
+
+          @include respond-below(md) {
+            font-size: 32px;
+            width: 100%;
+          }
+        }
+
+        // Tabs Container
+        .tabs-container {
+          // Container for entire tab system
+          display: flex;
+          min-height: 223px;
+          padding: 12px 0px 24px 0px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 24px;
+          align-self: stretch;
+          border-radius: 16px;
+          background: #FFF;
+
+          // Navigation Tabs
+          .nav-tabs {
+            // Styles for tab navigation container
+            display: flex;
+            padding: 0px 12px;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+            align-self: stretch;
+
+            // Individual Tab Links
+            .nav-link {
+              // Base styles for all tab links
+              border-radius: 8px;
+              border: 1px solid var(--Complementary-2, #DDD);
+              padding: 20px 10px;
+              color: var(--Contrast-1, #193547);
+              text-align: center;
+              font-family: "Apotek ExtraCond";
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 550;
+              line-height: 24.231px;
+              /* 121.154% */
+              text-transform: uppercase;
+              background-color: white;
+              letter-spacing: 0;
+
+              // Active Tab State
+              &.active {
+                // Styles when tab is active
+                border-radius: 8px;
+                background: var(--Contrast-1, #193547);
+                color: white;
+              }
+
+              // Disabled Tab State
+              &:disabled {
+                // Styles for disabled tabs
+              }
+            }
+          }
+
+          // Tab Content
+          .tab-content {
+            // Styles for content container
+            padding: 11px;
+            width: 100%;
+
+            // Individual Tab Panes
+            .tab-pane {
+              // Base styles for tab panes
+              display: none;
+
+              p {
+                color: var(--Contrast-1, #193547);
+                text-align: center;
+                leading-trim: both;
+                text-edge: cap;
+
+                /* BODY */
+                font-family: "Roboto Condensed";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                /* 125% */
+              }
+
+              // Active Tab Pane
+              &.active {
+                // Styles when tab pane is active
+                display: block;
+              }
+            }
+          }
+        }
+
+        .tabs-cta {
+          border-radius: 40px;
+          background: var(--Contrast-1, #193547);
+          display: flex;
+          padding: 12px 16px 12px 24px;
+          align-items: center;
+          gap: 11.924px;
+          align-self: stretch;
+          text-align: center;
+          color: var(--Background, #FFF);
+          leading-trim: both;
+          text-edge: cap;
+          font-family: "Apotek ExtraCond";
+          font-size: 33.388px;
+          font-style: normal;
+          font-weight: 716;
+          line-height: 28.619px;
+          /* 85.714% */
+          text-transform: uppercase;
+
+          span.plus {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            padding: 7.515px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 40px;
+            background: #FFF;
+          }
+        }
+      }
+
+      // Product Main Image
+      .product-tabs-image {
+
+        // Styles for the product image wrapper
+        @include respond-below(md) {
+          display: none;
+        }
+
+        img {
+          // Styles for the product image
+          // Consider responsive image styles
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 19.588px;
+          height: 428.478px;
+          flex: 1 0 0;
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  .xite-product-usps {
+    @include respond-below(md) {
+      margin-bottom: 0;
+    }
+
+    .usps-section {
+      @include respond-below(md) {
+        border-radius: 20px 20px 0 0;
+      }
+    }
+  }
+
+  .xite-featured-banner {
+    @include respond-below(md) {
+      border-radius: 0 0 40px 40px;
+      background: var(--Contrast-2, #BBD8E9);
+    }
+  }
+
+
+  .xite-reviews {
+    padding-bottom: 90px;
+
+    .container {
+      // General container styles
+    }
+
+    .jdgm-widget.jdgm-widget {
+      display: block;
+      border-radius: 20px;
+      background: #FFF;
+      padding: 0 16px;
+    }
+
+    .jdgm-rev-widg {
+      .jdgm-rev-widg__header {
+        h2.jdgm-rev-widg__title {
+          color: var(--Contrast-1, #193547);
+          text-align: center;
+          font-family: "Apotek ExtraCond";
+          font-size: 60px;
+          font-style: normal;
+          font-weight: 716;
+          line-height: 52px;
+          text-transform: uppercase;
+
+          @include respond-below(md) {
+            font-size: 32px;
+          }
+        }
+      }
+
+      span.jdgm-star.jdgm--on,
+      span.jdgm-star.jdgm--off {
+        color: #193547;
+      }
+
+      .jdgm-histogram .jdgm-star {
+        color: #193547;
+      }
+
+      .jdgm-histogram__bar {
+        border-radius: 50px;
+        overflow: hidden;
+
+        .jdgm-histogram__bar-content {
+          background-color: #193547;
+        }
+      }
+
+      .jdgm-write-rev-link.jdgm-write-rev-link {
+        background-color: #193547;
+        border-color: #193547;
+        border-radius: 50px;
+      }
+    }
+
+  }
+
+
+  .xite-related-products {
+    padding: 37px 80px !important;
+    background: white;
+    overflow: hidden;
+    @include respond-below(md) {
+      padding: 40px 16px 76.999px 16px !important;
+      background-color: transparent;
+    }
+
+    .container {
+      // General container styles
+      display: flex;
+      // max-width: 1512px;
+      flex-direction: column;
+      align-items: center;
+      gap: 54px;
+
+      @include respond-below(md) {
+        gap: 32px;
+      }
+    }
+
+    h2 {
+      // Heading styles
+      color: #000;
+      text-align: center;
+      font-family: "Apotek ExtraCond";
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 716;
+      line-height: 52px;
+      /* 86.667% */
+      text-transform: uppercase;
+
+      @include respond-below(md) {
+        font-size: 36px;
+        margin: 0;
+      }
+    }
+
+    // .related-products-grid {
+    //   display: grid;
+    //   grid-template-columns: repeat(auto-fill,minmax(23%, 1fr));
+    //   gap: 20px; // Space between product cards
+    //   width: 100%;
+    //   justify-items: center;
+
+    //   @include respond-below(md) {
+    //     display: none;
+    //   }
+    // }
+
+    .related-products {
+      // display: none;
+      overflow: unset;
+      max-width: 100%;
+      &:hover {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          opacity: 1;
+
+          &.swiper-button-disabled {
+            opacity: .75;
+          }
+        }
+      }
+
+      @include respond-below(md) {
+        display: block;
+      }
+
+      .swiper-slide {
+        width: fit-content;
+        .product-card{
+          max-width: 100%;
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        z-index: 20;
+        border-radius: 40px;
+        border: 1.192px solid var(--Contrast-1, #193547);
+        display: flex;
+        width: 56px;
+        height: 56px;
+        background-color: #193547;
+        opacity: 0;
+        transition: ease .2s;
+        z-index: 5;
+
+        &:after {
+          font-size: 20px;
+          color: #FFF;
+        }
+
+        @include respond-below(md) {
+          display: none;
+        }
+      }
+    }
+
+    .product-card {
+      width: 100%;
+
+      @include respond-below(md) {
+        display: flex;
+      }
+
+      .product-image {
+        img {
+
+          // Add additional image styling here
+        }
+      }
+
+      .product-details {
+        .product-title {
+          a {
+            // Add link styling here
+          }
+        }
+
+        .product-reviews-wrapper {
+          // Add styles for the review widget
+        }
+
+        .product-price {
+          // Add styles for the price display
+        }
+      }
+
+      form {
+        .add-to-cart-button {
+          cursor: pointer;
+          // Add button-specific styling
+        }
+      }
+    }
+  }
+
+}

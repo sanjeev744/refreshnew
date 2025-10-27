@@ -1,0 +1,272 @@
+.xite-featured-reviews {
+    position: relative;
+    padding: 64px 0;
+    p{
+        margin: 0;
+    }
+    img.bar {
+        object-fit: contain;
+        position: absolute;
+        top: -110px;
+        left: -60px;
+        width: 333.538px;
+        height: 333.538px;
+        transform: rotate(1.515deg);
+        flex-shrink: 0;
+        @include respond-below(md){
+            display: none;
+        }
+    }
+    img.chocolate {
+        object-fit: contain;
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 256px;
+        height: 208px;
+        flex-shrink: 0;
+        @include respond-below(md){
+            display: none;
+        }
+    }
+    img.products-mobile{
+        display: none;
+        width: 267.396px;
+        height: 218.248px;
+        flex-shrink: 0;
+        // align-self: flex-end;
+        object-fit: contain;
+        @include respond-below(md){
+            display: block;
+        }
+    }
+    &>.container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 59px;
+    }
+    .section-header {
+        display: flex;
+        width: 660px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        @include respond-below(md){
+            width: 100%;
+        }
+        .highlight {
+            color: var(--Contrast-1, #193547);
+            font-family: "Apotek ExtraCond";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 466;
+            line-height: 22.109px;
+            /* 92.12% */
+            letter-spacing: 0.96px;
+            text-transform: uppercase;
+
+            span {
+                color: var(--Contrast-1, #193547);
+                font-family: "Apotek ExtraCond";
+                font-size: 22.665px;
+                font-style: normal;
+                font-weight: 466;
+                line-height: 31.319px;
+                /* 138.179% */
+                letter-spacing: 0.907px;
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: none;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+                text-underline-position: from-font;
+                text-transform: uppercase;
+            }
+        }
+
+        .heading {
+            color: #193547;
+        }
+    }
+
+    .swiper-reviews {
+        max-width: 100%;
+        padding: 0 18px;
+        &:before {
+            content: '';
+            background: linear-gradient(90deg, rgba(245, 245, 245, 0.00) -13.45%, #F5F5F5 71.99%);
+            height: 100%;
+            width: 315px;
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include respond-below(md){
+                display: none;
+            }
+        }
+        &:after {
+            content: '';
+            background: linear-gradient(270deg, rgba(245, 245, 245, 0.00) 3.57%, #F5F5F5 71.99%);
+            height: 100%;
+            width: 315px;
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include respond-below(md){
+                display: none;
+            }
+        }
+        .swiper-slide{
+            @include respond-below(md){
+                width: fit-content;
+            }
+        }
+        .review-slide {
+            border-radius: 17.593px;
+            background: var(--Background, #FFF);
+            @include respond-below(md){
+                max-width: 251px;
+            }
+            .review-content{
+                display: flex;
+                max-width: 560px;
+                padding: 15px 8px 0px 8px;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                .review-heading {
+                    .stars {
+                        text-align: center;
+                        color: var(--Contrast-1, #193547);
+                        font-family: "Apotek ExtraCond";
+                        font-size: 22.665px;
+                        font-style: normal;
+                        font-weight: 466;
+                        line-height: 31.319px;
+                        letter-spacing: 0.907px;
+                        .svg-wrapper {
+                            display: flex;
+                        }
+                    }
+    
+                    .review {
+                        color: var(--Contrast-1, #193547);
+                        text-align: center;
+                        font-family: 'Roboto Condensed';
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 24px;
+                        /* 120% */
+                    }
+                }
+        
+                .customer {
+                    color: var(--Contrast-2, #BBD8E9);
+                    font-family: "Apotek ExtraCond";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 466;
+                    line-height: 22.109px;
+                    /* 92.12% */
+                    letter-spacing: 0.96px;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+                .product-wrapper {
+                    display: flex;
+                    padding: 6px 58px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    align-self: stretch;
+                    border-top: 1px dashed #A3C5DC;
+                    @include respond-below(md){
+                        padding: 6px 0;
+                        gap: 4px;
+                    }
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        @include respond-below(md){
+                            width: auto;;
+                        }
+                    }
+                    .title{
+                        color: var(--Contrast-1, #193547);
+                        font-family: 'Roboto Condensed';
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 20px; /* 125% */
+                        @include respond-below(md){
+                            width: auto;
+                        }
+                    }
+                    .btn-arrow{
+                        padding: 0;
+                        border-radius: 54.552px;
+                        background: var(--Contrast-1, #193547);
+                        @include respond-below(md){
+                            width: 40px;
+                        }
+                        .arrow{
+                            background-color: transparent;
+                            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxMSIgdmlld0JveD0iMCAwIDE5IDExIiBmaWxsPSJub25lIj4NCiAgPHBhdGggZD0iTTE4LjMyMDggNS45MDg0NUMxOC41ODcxIDUuNjQyMTUgMTguNTg3MSA1LjIxMDM5IDE4LjMyMDggNC45NDQwOUwxMy45ODEyIDAuNjA0NTAxQzEzLjcxNDkgMC4zMzgyMDIgMTMuMjgzMiAwLjMzODIwMiAxMy4wMTY5IDAuNjA0NTAxQzEyLjc1MDYgMC44NzA4IDEyLjc1MDYgMS4zMDI1NiAxMy4wMTY5IDEuNTY4ODVMMTYuODc0MyA1LjQyNjI3TDEzLjAxNjkgOS4yODM2OEMxMi43NTA2IDkuNTQ5OTggMTIuNzUwNiA5Ljk4MTc0IDEzLjAxNjkgMTAuMjQ4QzEzLjI4MzIgMTAuNTE0MyAxMy43MTQ5IDEwLjUxNDMgMTMuOTgxMiAxMC4yNDhMMTguMzIwOCA1LjkwODQ1Wk0wLjkyNDU2MSA2LjEwODE3SDE3LjgzODZWNC43NDQzN0gwLjkyNDU2MVY2LjEwODE3WiIgZmlsbD0id2hpdGUiLz4NCjwvc3ZnPg==) !important;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .navigation-wrapper{
+        display: flex;
+        width: 898px;
+        justify-content: space-between;
+        align-items: center;
+        @include respond-below(md){
+            width: 100%;
+        }
+        .swiper-button-prev, .swiper-button-next{
+            position: unset;
+            z-index: 20;
+            border-radius: 40px;
+            border: 1.192px solid var(--Contrast-1, #193547);
+            display: flex;
+            width: 56px;
+            height: 56px;
+            &:after {
+                font-size: 20px;
+                color: #193547;
+            }
+            @include respond-below(md){
+                display: none;
+            }
+        }
+        .btn-arrow{
+            background: transparent;
+            border-bottom: 1px solid #193547;
+            border-radius: 0;
+            padding: 12px 0px 12px 0px;
+            @include respond-below(md){
+                width: fit-content;
+                display: flex;
+                margin: auto;
+                margin-top: 0;
+            }
+            .arrow{
+                content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxOSAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4LjMyMDYgNS44NDc5QzE4LjU4NjkgNS41ODE2IDE4LjU4NjkgNS4xNDk4NCAxOC4zMjA2IDQuODgzNTVMMTMuOTgxIDAuNTQzOTU0QzEzLjcxNDcgMC4yNzc2NTUgMTMuMjgyOSAwLjI3NzY1NSAxMy4wMTY2IDAuNTQzOTU0QzEyLjc1MDMgMC44MTAyNTMgMTIuNzUwMyAxLjI0MjAxIDEzLjAxNjYgMS41MDgzMUwxNi44NzQgNS4zNjU3MkwxMy4wMTY2IDkuMjIzMTRDMTIuNzUwMyA5LjQ4OTQ0IDEyLjc1MDMgOS45MjExOSAxMy4wMTY2IDEwLjE4NzVDMTMuMjgyOSAxMC40NTM4IDEzLjcxNDcgMTAuNDUzOCAxMy45ODEgMTAuMTg3NUwxOC4zMjA2IDUuODQ3OVpNMC45MjQzMTYgNi4wNDc2MkgxNy44Mzg0VjQuNjgzODJIMC45MjQzMTZWNi4wNDc2MloiIGZpbGw9IiMxOTM1NDciLz4KPC9zdmc+Cg==');
+                background-color: transparent;
+                width: auto;
+            }
+        }
+    }
+
+}

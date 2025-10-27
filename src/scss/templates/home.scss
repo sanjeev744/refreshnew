@@ -1,0 +1,92 @@
+.template-index{
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+
+body .shipping{
+    display: none;
+}
+.bss-fl-enable p.bss-fl-message {
+  padding-top: 20px;
+}
+body .xite-header .header-inner__menu .menu-link .mega-menu__content {
+    display: flex;
+    gap: 1px;
+}
+
+body .xite-header .header-inner__menu .menu-link .mega-menu__content {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(8, 1fr);
+}
+ 
+@media (min-width: 992px) and (max-width: 1599px) {
+body .xite-header .header-inner__menu .menu-link .mega-menu__column {
+     min-width: 10vw !important;
+}
+body .xite-header .header-inner__menu .menu-link .mega-menu__heading img {
+    width: 40px;
+    height: 40px;
+}	
+body .xite-header .header-inner__menu .menu-link .mega-menu__heading {
+    gap: 10px;
+}
+ 
+		
+}
+ 
+ 
+body .xite-featured-collections .container ul.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(123px,1fr));
+    gap: 20px;
+    width: 100%;
+    list-style: none;
+    max-width: 1124px;
+    margin: auto;
+}
+ 
+body .xite-header .header-inner__menu .menu-link .mega-menu__content {
+    display: flex;
+    gap: 0px;
+}
+ 
+body .xite-header .header-inner__menu .menu-link .mega-menu__column {
+    display: flex;
+    padding: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 170px;
+    width: 100%;
+}
+body .xite-header .header-inner__menu .menu-link .mega-menu__column__title {
+    color: var(--Contrast-1,#193547);
+    font-family: "Apotek ExtraCond";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 633;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+ 
+body .xite-header .header-inner__menu .menu-link .mega-menu__heading img {
+    border-radius: 8px;
+    background: #DCEADD;
+    width: 44px;
+    height: 44px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+body .xite-header .header-inner__logo {
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    max-width: 140px;
+    max-height: 140px;
+    object-fit: contain;
+}

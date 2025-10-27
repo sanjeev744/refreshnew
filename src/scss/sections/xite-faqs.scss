@@ -1,0 +1,160 @@
+// Base Styles for the Container
+.xite-faqs {
+
+    padding: 40px 0;
+    @include respond-below(md){
+        padding: 40px 15px;
+    }
+    .container {
+        max-width: 1121px !important;
+    }
+
+    // FAQs Wrapper
+    .faqs-wrapper {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        @include respond-below(md){
+            flex-direction: column;
+            gap: 40px;
+        }
+        // Heading Section
+        .heading {
+            text-align: left;
+            display: flex;
+            width: 439px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            @include respond-below(md){
+                width: 100%;
+            }
+
+            h2 {
+                color: var(--Contrast-1, #193547);
+                font-family: "Apotek ExtraCond";
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 716;
+                line-height: 52px;
+                /* 86.667% */
+                text-transform: uppercase;
+                text-align: left;
+                margin: 0;
+                @include respond-below(md){
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 716;
+                    line-height: 36px; /* 112.5% */
+                    text-transform: uppercase;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+            .btn-arrow{
+                @include respond-below(md){
+                    display: none;
+                }
+            }
+        }
+
+        // Accordion Styles
+        .accordion {
+            border: none;
+            display: flex;
+            width: 666px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            @include respond-below(md){
+                width: 100%;
+            }
+            &-item {
+                border: none;
+                border-radius: 8px !important;
+                background: #FFF;
+                overflow: hidden;
+                width: 100%; 
+                transition: ease .2s;
+                &:has(.collapsed){
+
+                }
+                .accordion-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    align-self: stretch;
+                    padding: 12px 12px 20px 12px;
+                    .item-icon{
+                        width: 52px;
+                        height: 52px;
+                    }
+                    .accordion-button {
+                        color: var(--Contrast-1, #193547);
+                        font-family: "Apotek ExtraCond";
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 633;
+                        line-height: 24px; /* 100% */
+                        text-transform: uppercase;
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                        padding: 0;
+                        background-color: transparent !important;
+                        letter-spacing: 0;
+                        @include respond-below(md) { 
+                            gap: 10px;
+                        }
+                        &:after {
+                            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI2IDE2QzI2IDIxLjUyMjggMjEuNTIyOCAyNiAxNiAyNkMxMC40NzcyIDI2IDYgMjEuNTIyOCA2IDE2QzYgMTAuNDc3MiAxMC40NzcyIDYgMTYgNkMyMS41MjI4IDYgMjYgMTAuNDc3MiAyNiAxNlpNMjggMTZDMjggMjIuNjI3NCAyMi42Mjc0IDI4IDE2IDI4QzkuMzcyNTggMjggNCAyMi42Mjc0IDQgMTZDNCA5LjM3MjU4IDkuMzcyNTggNCAxNiA0QzIyLjYyNzQgNCAyOCA5LjM3MjU4IDI4IDE2Wk0yMS43MzExIDE0LjQ5NjNDMjIuMDcwMiAxNC4wNjAzIDIxLjk5MTYgMTMuNDMyMSAyMS41NTU3IDEzLjA5M0MyMS4xMTk3IDEyLjc1MzkgMjAuNDkxNSAxMi44MzI1IDIwLjE1MjQgMTMuMjY4NEwxNS45NDkzIDE4LjY3MjRMMTEuMTAwOSAxMy4yMThDMTAuNzM0IDEyLjgwNTIgMTAuMTAxOSAxMi43NjggOS42ODkxNSAxMy4xMzQ5QzkuMjc2MzcgMTMuNTAxOSA5LjIzOTE5IDE0LjEzMzkgOS42MDYxMSAxNC41NDY3TDE1LjI1MzIgMjAuODk5N0MxNS40NTA1IDIxLjEyMTcgMTUuNzM2NCAyMS4yNDQ1IDE2LjAzMzQgMjEuMjM0OEMxNi4zMzAzIDIxLjIyNSAxNi42MDc1IDIxLjA4MzcgMTYuNzg5OSAyMC44NDkyTDIxLjczMTEgMTQuNDk2M1oiIGZpbGw9IiMxOTM1NDciLz4KPC9zdmc+") !important;
+                            background-size: contain;
+                            width: 32px;
+                            height: 32px;
+                        }
+                        &:not(.collapsed){
+                            background-color: transparent;
+                            border: none !important;
+                            box-shadow: none;
+                        }
+                        &:not(.collapsed):after {
+                            // background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMSIgdmlld0JveD0iMCAwIDE3IDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxsaW5lIHkxPSIwLjUiIHgyPSIxNyIgeTI9IjAuNSIgc3Ryb2tlPSIjRjZCRDRFIi8+Cjwvc3ZnPgo=);
+                            // @include respond-below(md) { 
+                            //     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMiIgdmlld0JveD0iMCAwIDE4IDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxsaW5lIHgxPSIwLjUiIHkxPSIxIiB4Mj0iMTcuNSIgeTI9IjEiIHN0cm9rZT0iIzI3M0Y2MiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo=);
+                            // }
+                        }
+                        &:focus {
+
+                        }
+
+                        &:hover {
+
+                        }
+
+                        &.collapsed {
+
+                        }
+                    }
+                }
+
+                .accordion-collapse {
+                    &.show {
+                        .accordion-body {
+
+                        }
+                    }
+                }
+
+                .accordion-body {
+                    color: #000;
+                    /* BODY */
+                    font-family: Roboto;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 20px; /* 125% */
+                }
+            }
+        }
+    }
+}

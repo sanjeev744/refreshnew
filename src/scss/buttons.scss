@@ -1,0 +1,40 @@
+.btn-arrow {
+    border-radius: 40px;
+    background: var(--Contrast-1, #193547);
+    display: inline-flex;
+    padding: 12px 16px 12px 24px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: var(--Background, #FFF);
+    font-family: "Apotek ExtraCond";
+    font-size: 33.388px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28.619px; /* 85.714% */
+    text-transform: uppercase;
+    @include respond-below(md) {
+        width: 100%;
+        order: 2;
+    }
+    &.alt{
+        background-color: #FFF;
+        color: #193547;
+        span.arrow {
+            background-color: var(--Contrast-1, #193547);
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxMSIgdmlld0JveD0iMCAwIDE5IDExIiBmaWxsPSJub25lIj4NCiAgPHBhdGggZD0iTTE4LjMyMDggNS45MDg0NUMxOC41ODcxIDUuNjQyMTUgMTguNTg3MSA1LjIxMDM5IDE4LjMyMDggNC45NDQwOUwxMy45ODEyIDAuNjA0NTAxQzEzLjcxNDkgMC4zMzgyMDIgMTMuMjgzMiAwLjMzODIwMiAxMy4wMTY5IDAuNjA0NTAxQzEyLjc1MDYgMC44NzA4IDEyLjc1MDYgMS4zMDI1NiAxMy4wMTY5IDEuNTY4ODVMMTYuODc0MyA1LjQyNjI3TDEzLjAxNjkgOS4yODM2OEMxMi43NTA2IDkuNTQ5OTggMTIuNzUwNiA5Ljk4MTc0IDEzLjAxNjkgMTAuMjQ4QzEzLjI4MzIgMTAuNTE0MyAxMy43MTQ5IDEwLjUxNDMgMTMuOTgxMiAxMC4yNDhMMTguMzIwOCA1LjkwODQ1Wk0wLjkyNDU2MSA2LjEwODE3SDE3LjgzODZWNC43NDQzN0gwLjkyNDU2MVY2LjEwODE3WiIgZmlsbD0id2hpdGUiLz4NCjwvc3ZnPg==) !important;
+            color: white;
+        }
+    }
+    span.arrow {
+        display: block;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxOSAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4LjMyMDYgNS44NDc5QzE4LjU4NjkgNS41ODE2IDE4LjU4NjkgNS4xNDk4NCAxOC4zMjA2IDQuODgzNTVMMTMuOTgxIDAuNTQzOTU0QzEzLjcxNDcgMC4yNzc2NTUgMTMuMjgyOSAwLjI3NzY1NSAxMy4wMTY2IDAuNTQzOTU0QzEyLjc1MDMgMC44MTAyNTMgMTIuNzUwMyAxLjI0MjAxIDEzLjAxNjYgMS41MDgzMUwxNi44NzQgNS4zNjU3MkwxMy4wMTY2IDkuMjIzMTRDMTIuNzUwMyA5LjQ4OTQ0IDEyLjc1MDMgOS45MjExOSAxMy4wMTY2IDEwLjE4NzVDMTMuMjgyOSAxMC40NTM4IDEzLjcxNDcgMTAuNDUzOCAxMy45ODEgMTAuMTg3NUwxOC4zMjA2IDUuODQ3OVpNMC45MjQzMTYgNi4wNDc2MkgxNy44Mzg0VjQuNjgzODJIMC45MjQzMTZWNi4wNDc2MloiIGZpbGw9IiMxOTM1NDciLz4KPC9zdmc+Cg==);
+        background-size: 18px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 54.552px;
+        background-color: var(--Background, #FFF);
+        padding: 16.366px 12px;
+        width: 40.914px;
+    }
+}

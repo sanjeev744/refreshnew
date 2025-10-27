@@ -1,0 +1,136 @@
+// Store Locator Section
+.xite-store-locator {
+    display: flex;
+    padding: 150px 81px 81px 80px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: var(--Contrast-1, #193547);
+    @include respond-below(md){
+        padding: 109px 16px 76px 16px;
+    }
+    // Container styles
+    .container {
+        // Add container-specific layout properties if needed
+    }
+
+    // Store Locator Callouts
+    .store-locator-callouts {
+        // Flex or grid layout for callout columns
+        display: flex;
+        gap: 13px;
+        margin-bottom: 43px;
+        @include respond-below(md){
+            margin-bottom: 48px;
+        }
+        // Individual callout column
+        .sl-column {
+            // Column layout and spacing
+            border-radius: 20px;
+            background: #152935;
+            display: flex;
+            padding: 33px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 16px;
+            flex: 1 0 0;
+
+            &:nth-child(3) {
+                // flex-direction: column-reverse !important;
+            }
+
+            // Heading styles
+            h4 {
+                // Title typography
+                color: var(--Contrast-2, #FFF);
+                font-family: "Apotek ExtraCond";
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 716;
+                line-height: 40px; /* 70% */
+                letter-spacing: 0.8px;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            // Highlight text styles
+            small {
+                // Smaller text styling
+                color: var(--Contrast-2, #BBD8E9);
+                font-family: "Apotek ExtraCond";
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 550;
+                line-height: 24px; /* 204.419% */
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    // Store Locator Wrapper
+    .store-locator-wrapper {
+        // Wrapper layout
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 43px;
+        .heading{
+            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            // Main title
+            .highlight{
+                color: var(--Contrast-2, #BBD8E9);
+                text-align: center;
+                leading-trim: both;
+                text-edge: cap;
+
+                /* MOB/SUMMARIES */
+                font-family: "Apotek ExtraCond";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 550;
+                line-height: 28px; /* 140% */
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+            }
+            .title {
+                // Title typography and spacing
+                color: var(--Contrast-2, #FFF);
+                font-family: "Apotek ExtraCond";
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 716;
+                line-height: 52px;
+                /* 86.667% */
+                text-transform: uppercase;
+                margin: 0;
+                @include respond-below(md){
+                    font-size: 32px;
+                    line-height: 32px; /* 100% */
+                }
+            }
+        }
+
+        // Stockist widget container
+        stockist-store-locator {
+            width: 1042px;
+            border-radius: 20px;
+            background: #FFF;
+            padding: 41px;
+            @include respond-below(md){
+                width: 100%;
+                padding: 41px 17px;
+            }
+        }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+        .store-locator-callouts {
+            // Mobile layout for callout columns
+            flex-direction: column;
+        }
+    }
+}

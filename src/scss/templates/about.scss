@@ -1,0 +1,17 @@
+body#about {
+    .xite-featured-banner {
+        margin-bottom: 40px;
+
+        @include respond-below(md) {
+            margin-bottom: 20px;
+        }
+    }
+
+    [data-section-id="pf-566d"] {
+        display: none;
+    }
+
+    img {
+        height: auto;
+    }
+}

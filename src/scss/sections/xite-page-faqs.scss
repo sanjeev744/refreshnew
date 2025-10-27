@@ -1,0 +1,109 @@
+// Same styling as product-faqs but separated to leave open for changes
+section.xite-page-faqs-section{
+    @include respond-below(md){
+        padding: 64px 16px 117px 16px;
+    }
+    .xite-page-faqs {
+        display: flex;
+        width: 664px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 76px 0;
+        align-items: center;
+        margin: auto;
+        @include respond-below(md){
+            width: 100%;
+            gap: 25px;
+            padding: 0;
+        }
+        .faqs-heading {
+            color: var(--Contrast-1, #193547);
+            text-align: center;
+            /* DSK/H1 */
+            font-family: "Apotek ExtraCond";
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 716;
+            line-height: 52px;
+            /* 86.667% */
+            text-transform: uppercase;
+            margin: 0;
+            @include respond-below(md){
+                font-size: 32px;
+            }
+        }
+
+        .accordion-container {
+            // border: 1px solid #ddd;
+            // border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+            .ac {
+                border: none;
+                border-bottom: 1px solid #C9C9C9;
+                padding: 24px 0;
+                background: transparent;
+                margin: 0;
+                @include respond-below(md){
+                    padding: 20px 0;
+                }
+                &.is-active{
+                    .ac-header {
+                        .ac-trigger{
+                            &::after{
+                                content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIiBmaWxsPSJub25lIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEwLjY0NjQgOC44NTM1NUMxMC44NDE3IDkuMDQ4ODIgMTEuMTU4MyA5LjA0ODgyIDExLjM1MzYgOC44NTM1NUMxMS41NDg4IDguNjU4MjkgMTEuNTQ4OCA4LjM0MTcxIDExLjM1MzYgOC4xNDY0NUw2LjM1MzU1IDMuMTQ2NDVDNi4xNTgyOSAyLjk1MTE4IDUuODQxNzEgMi45NTExOCA1LjY0NjQ1IDMuMTQ2NDVDNS42NDYzMSAzLjE0NjU4IDUuNjQ2MTcgMy4xNDY3MiA1LjY0NjAzIDMuMTQ2ODZMMC42NDY0NDYgOC4xNDY0NUMwLjQ1MTE4NCA4LjM0MTcxIDAuNDUxMTg0IDguNjU4MjkgMC42NDY0NDYgOC44NTM1NUMwLjg0MTcwOSA5LjA0ODgxIDEuMTU4MjkgOS4wNDg4MSAxLjM1MzU1IDguODUzNTVMNiA0LjIwNzExTDEwLjY0NjQgOC44NTM1NVoiIGZpbGw9IiMxOTM1NDciLz4KPC9zdmc+");
+                            }
+                        }
+                    }
+                    .ac-panel {
+                    }
+                }
+                .ac-header {
+                    /* 150% */
+                    &:hover {
+
+                    }
+                    .ac-trigger{
+                        color: var(--Contrast-1, #193547);
+                        font-family: "Roboto Condensed";
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 24px; /* 150% */
+                        padding-left: 0;
+                        text-transform: none;
+                        letter-spacing: 0;
+                        &::after{
+                            content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIiBmaWxsPSJub25lIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEuMzUzNTUgMy4xNDY0NUMxLjE1ODI5IDIuOTUxMTggMC44NDE3MDkgMi45NTExOCAwLjY0NjQ0NyAzLjE0NjQ1QzAuNDUxMTg0IDMuMzQxNzEgMC40NTExODQgMy42NTgyOSAwLjY0NjQ0NyAzLjg1MzU1TDUuNjQ2NDUgOC44NTM1NUM1Ljg0MTcxIDkuMDQ4ODIgNi4xNTgyOSA5LjA0ODgyIDYuMzUzNTUgOC44NTM1NUM2LjM1MzY5IDguODUzNDIgNi4zNTM4MyA4Ljg1MzI4IDYuMzUzOTcgOC44NTMxNEwxMS4zNTM2IDMuODUzNTVDMTEuNTQ4OCAzLjY1ODI5IDExLjU0ODggMy4zNDE3MSAxMS4zNTM2IDMuMTQ2NDVDMTEuMTU4MyAyLjk1MTE4IDEwLjg0MTcgMi45NTExOCAxMC42NDY0IDMuMTQ2NDVMNiA3Ljc5Mjg5TDEuMzUzNTUgMy4xNDY0NVoiIGZpbGw9IiMxOTM1NDciLz4KPC9zdmc+");
+                        }
+
+                    }
+
+                    // .accordion__icon {
+                    //     font-size: 18px;
+                    //     transform: rotate(0deg);
+                    //     transition: transform 0.3s;
+                    // }
+                }
+
+                .ac-panel {
+                    .ac-text{
+                        background-color: transparent;
+                        color: var(--Contrast-1, #193547);
+                        font-family: Roboto;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 20px; /* 125% */
+                        padding: 15px 0px;
+                        p{
+                            margin: 0;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
